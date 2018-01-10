@@ -24,9 +24,16 @@ public class HelloWorldController {
     @RequestMapping(value = "hello")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("message", "this is a test!这是一个测试");
+        modelAndView.addObject("message", "this is a hello world!这是一个你好世界");
         modelAndView.setViewName("hello");
+        return modelAndView;
+    }
 
+    @RequestMapping(value = "test")
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletRequest response) throws Exception {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("message", "this is a test! 这是一个测试");
+        modelAndView.setViewName("test");
         return modelAndView;
     }
 }
